@@ -58,7 +58,7 @@ x_test.shape
 from keras.utils import to_categorical
 import numpy as np
 
-# Number of classes in your dataset
+# Number of classes in dataset
 num_classes = len(np.unique(y_train))
 num_classes
 
@@ -68,18 +68,6 @@ y_test_encoded = to_categorical(y_test, num_classes)
 
 
 ### Building the Model
-# Use Keras to create a model consisting of at least the following layers (but feel free to experiment):**
-# 
-# * 2D Convolutional Layer, filters=32 and kernel_size=(4,4)
-# * Pooling Layer where pool_size = (2,2)
-# 
-# * Flatten Layer
-# * Dense Layer (128 Neurons, but feel free to play around with this value), RELU activation
-# 
-# * Final Dense Layer of 10 Neurons with a softmax activation
-# 
-# Compile the model with these parameters: loss='categorical_crossentropy', optimizer='rmsprop', metrics=['accuracy']
-
 from keras.models import Sequential
 from keras.layers import Activation, Dropout, Flatten, Dense, Conv2D, MaxPooling2D
 
@@ -110,8 +98,6 @@ model.fit(x_train,y_train_encoded,epochs=10)
 
 
 ### Evaluating the Model
-# Show the accuracy,precision,recall,f1-score the model achieved on the x_test data set. Keep in mind, there are quite a few ways to do this, but we recommend following the same procedure we showed in the MNIST lecture.
-
 model.metrics_names
 
 model.evaluate(x_test,y_test_encoded)
