@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 car_plate = cv2.imread('../DATA/car_plate.jpg')
 
 
-### Create a function that displays the image in a larger scale and correct coloring for matplotlib.
+### Function that displays the image in a larger scale and correct coloring for matplotlib.
 def display(img):
     fig = plt.figure(figsize=(10,8))
     ax = fig.add_subplot(111)
@@ -18,11 +18,11 @@ def display(img):
 display(car_plate)
 
 
-###Load the haarcascade_russian_plate_number.xml file.
+### Load the haarcascade_russian_plate_number.xml file.
 plate_cascade = cv2.CascadeClassifier('../DATA/haarcascades/haarcascade_russian_plate_number.xml')
 
 
-###Create a function that takes in an image and draws a rectangle around what it detects to be a license plate. Keep in mind we're just drawing a rectangle around it for now, later on we'll adjust this function to blur. You may want to play with the scaleFactor and minNeighbor numbers to get good results.
+### Function that takes in an image and draws a rectangle around what it detects to be a license plate. 
 def detect_plate(img):
     
   
@@ -39,7 +39,7 @@ result = detect_plate(car_plate)
 
 display(result)
 
-### Edit the function so that is effectively blurs the detected plate, instead of just drawing a rectangle around it. Here are the steps you might want to take:
+### Function which blurs the detected plate.
 def detect_and_blur_plate(img):
     
     plate_img = img.copy()
